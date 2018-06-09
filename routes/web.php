@@ -1,7 +1,6 @@
 <?php
 
-
-Route::get('/', 'dependenciasControlador@index');
+Route::get('/', 'dependenciaControlador@index');
 
 Route::resource('Dependencia', 'dependenciaControlador');
 Auth::routes();
