@@ -10,8 +10,8 @@ class dependenciaControlador extends Controller
 
     public function index()
     {
-        $dependencias=Dependencia::orderBY('id', 'DESC')->paginate(3);
-        return view('Dependencia.index', compact('dependencias'));
+        $dependencia=Dependencia::orderBY('id', 'DESC')->paginate(3);
+        return view('Dependencia.index', compact('dependencia'));
     }
 
     /**
@@ -46,8 +46,8 @@ class dependenciaControlador extends Controller
      */
     public function show($id)
     {
-        $dependencias=Dependencia::find($id);
-        return view('Dependencia.show',compact('dependencias'));
+        $dependencia=Dependencia::find($id);
+        return view('Dependencia.show',compact('dependencia'));
     }
 
     /**
@@ -92,9 +92,9 @@ class dependenciaControlador extends Controller
         return redirect()->route('Dependencia.index')->with('success','Registro Eliminado');
     }
 
-    public function getdependencias(){
+    public function getdependencia(){
         
-        $dependencias=Dependencia::all();
-        return response()->json($dependencias);
+        $dependencia=Dependencia::all();
+        return response()->json($dependencia);
     }
 }
