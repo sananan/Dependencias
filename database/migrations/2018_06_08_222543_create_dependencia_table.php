@@ -10,18 +10,17 @@ class CreateDependenciaTable extends Migration
 
     public function up()
     {
-        Schema::create('dependencia', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+        Schema::create('dependencias', function (Blueprint $table) {
+            $table->increments('id');        
             $table->string('tipoTramite');
             $table->string('Nombre');
             $table->string('Descripcion');    
-            
+            $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('dependencia');
+        Schema::dropIfExists('dependencias');
     }
 }

@@ -24,18 +24,15 @@ class dependenciaControlador extends Controller
         return view('Dependencia.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $this->validate($request,[ 'tipoTramite'=>'required', 'Nombre'=>'required',
-        'Descripcion'=>'required']);
+   
+
+    public function store(Request $request){
+        $this->validate($request,[ 'tipoTramite'=>'required', 
+                                    'Nombre'=>'required',
+                                 'Descripcion'=>'required']);
                 Dependencia::create($request->all());
-        return redirect()->route('Dependencia.index')->with('success','Registro creado satisfactoriamente');
+        return redirect()->route('Dependencia.index')->with(' success','Registro creado satisfactoriamente');
+    
     }
 
     /**
